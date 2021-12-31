@@ -6,6 +6,19 @@
           <h5 class="card-title">Registro de producto</h5>
           <form class="" @submit.prevent="addProduct">
             <div class="form-row">
+              <div class="col-md-2">
+                <div class="position-relative form-group">
+                  <label for="id" class="">Id</label
+                  ><input
+                    name="id"
+                    id="id"
+                    placeholder="Id"
+                    type="text"
+                    class="form-control"
+                    v-model="producto.id"
+                  />
+                </div>
+              </div>
               <div class="col-md-6">
                 <div class="position-relative form-group">
                   <label for="name" class="">Nombre</label
@@ -25,6 +38,7 @@
                   ><datepicker
                     :language="es"
                     name="releaseDate"
+                    placeholder="Fecha"
                     id="releaseDate"
                     input-class="form-control"
                     :disabled-dates="disabledDates"
@@ -38,6 +52,7 @@
               ><textarea
                 name="text"
                 id="description"
+                placeholder="Caracteristicas"
                 class="form-control"
                 v-model="producto.caracteristicas"
               ></textarea>
@@ -48,6 +63,7 @@
                   <label for="email" class="">E-mail del fabricante</label
                   ><input
                     name="email"
+                    placeholder="E-mail"
                     id="email"
                     type="email"
                     class="form-control"
@@ -82,6 +98,7 @@
                   <label for="price" class="">Precio</label>
                   <input
                     ref="input"
+                    placeholder="Precio"
                     v-model="precioFormatted"
                     v-currency="options"
                     class="form-control"
@@ -94,6 +111,7 @@
                   <label for="unitsAvailable" class=""
                     >Unidades disponibles</label
                   ><input
+                    placeholder="Unidades disponibles"
                     name="unitsAvailable"
                     id="unitsAvailable"
                     type="number"
@@ -106,6 +124,7 @@
                 <div class="position-relative form-group">
                   <label for="soldUnits" class="">Unidades vendidas</label
                   ><input
+                    placeholder="Unidades vendidas"
                     name="soldUnits"
                     id="soldUnits"
                     type="number"
@@ -173,6 +192,7 @@ export default {
       imageData: null,
       imgUrl: "",
       producto: {
+        id: "",
         nombre: "",
         fecha: "",
         caracteristicas: "",
@@ -214,9 +234,24 @@ export default {
         monto: this.precioFormatted,
         options: this.options,
       };
-      this.producto.img = this.imageData.name;
+
+      this.producto.img = this.imageData != null ? this.imageData.name : "";
       datos.addData(this.producto);
+      this.producto = {
+        id: "",
+        nombre: "",
+        fecha: "",
+        caracteristicas: "",
+        email: "",
+        pais: "",
+        precio: { monto: "", options: {} },
+        disponibles: 0,
+        vendidos: 0,
+        img: "",
+      };
+      this.precioFormatted = "";
       console.log(this.producto);
+      this.imageData = null;
       // this.$router.replace({
       //   name: "Home",
       //   // params: { id: resp.data[0].id },

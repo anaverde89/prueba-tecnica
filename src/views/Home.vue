@@ -26,7 +26,10 @@
               </div>
             </div>
           </div>
-          <div class="row"><table-products></table-products></div>
+          <div class="row">
+            <table-products :products="products"></table-products
+            ><!---->
+          </div>
         </div>
       </div>
     </div>
@@ -35,12 +38,17 @@
 
 <script>
 import TableProducts from "@/layout/components/Table";
+import datos from "@/datos";
 export default {
   data: () => ({
     buscar: "",
+    products: [],
   }),
   components: {
     TableProducts,
+  },
+  created() {
+    this.products = datos.getData();
   },
 };
 </script>

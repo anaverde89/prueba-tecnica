@@ -11,7 +11,7 @@
           :dark="dark"
           :fixed="fixed"
           :foot-clone="footClone"
-          :items="items"
+          :items="products"
           :fields="fields"
           sort-icon-left
         >
@@ -61,6 +61,12 @@ export default {
     fixed: false,
     footClone: false,
   }),
+  props: {
+    products: {
+      type: Array,
+      default: () => [], //Funcion que retorne un array cuando es de este tipo
+    },
+  },
   methods: {
     linkGen(pageNum) {
       return "#page/" + pageNum + "/foobar";
