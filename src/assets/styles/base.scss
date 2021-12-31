@@ -1,0 +1,97 @@
+// BOOTSTRAP 4 VARIABLES
+
+@import 'main/components/bootstrap4/functions';
+@import 'main/components/bootstrap4/variables';
+@import 'main/components/bootstrap4/mixins';
+
+// ArchitectUI Themes Variables
+
+@import 'main/themes/layout-variables';
+
+// BOOTSTRAP 4 IMPORTS
+
+@import 'main/components/bootstrap4/root';
+@import 'main/components/bootstrap4/reboot';
+@import 'main/components/bootstrap4/type';
+@import 'main/components/bootstrap4/images';
+@import 'main/components/bootstrap4/code';
+@import 'main/components/bootstrap4/grid';
+@import 'main/components/bootstrap4/tables';
+@import 'main/components/bootstrap4/forms';
+@import 'main/components/bootstrap4/buttons';
+@import 'main/components/bootstrap4/transitions';
+@import 'main/components/bootstrap4/dropdown';
+@import 'main/components/bootstrap4/button-group';
+@import 'main/components/bootstrap4/input-group';
+@import 'main/components/bootstrap4/custom-forms';
+@import 'main/components/bootstrap4/nav';
+@import 'main/components/bootstrap4/navbar';
+@import 'main/components/bootstrap4/card';
+@import 'main/components/bootstrap4/breadcrumb';
+@import 'main/components/bootstrap4/pagination';
+@import 'main/components/bootstrap4/badge';
+@import 'main/components/bootstrap4/jumbotron';
+@import 'main/components/bootstrap4/alert';
+@import 'main/components/bootstrap4/progress';
+@import 'main/components/bootstrap4/media';
+@import 'main/components/bootstrap4/list-group';
+@import 'main/components/bootstrap4/close';
+@import 'main/components/bootstrap4/toasts';
+@import 'main/components/bootstrap4/modal';
+@import 'main/components/bootstrap4/tooltip';
+@import 'main/components/bootstrap4/popover';
+@import 'main/components/bootstrap4/carousel';
+@import 'main/components/bootstrap4/spinners';
+@import 'main/components/bootstrap4/utilities';
+@import 'main/components/bootstrap4/print';
+
+// LAYOUT
+
+@import 'main/layout/layout';
+
+// UTILS
+
+@import 'main/utils/helpers';
+@import 'main/utils/backgrounds';
+@import 'main/utils/animate';
+@import 'main/utils/comps-animations';
+
+// ELEMENTS
+
+@import 'main/elements/buttons';
+@import 'main/elements/dropdown';
+@import 'main/elements/badges';
+@import 'main/elements/accordions';
+@import 'main/elements/modals';
+@import 'main/elements/timeline';
+@import 'main/elements/popovers-tooltips';
+
+// DASHBOARD BOXES
+
+@import 'main/widgets/chart-boxes/chart-boxes';
+@import 'main/widgets/content-boxes/content-boxes';
+
+// PAGES
+@import 'main/pages/userpages';
+
+// COMPONENTS
+
+// Perfect Scrollbar
+
+@import 'main/components/perfect-scrollbar/perfect-scrollbar';
+
+// Hamburger button
+
+@import 'main/components/hamburgers/hamburgers';
+
+// Icons
+
+@import 'main/components/icons/p7icons';
+
+// Responsive
+
+@import 'main/layout/responsive/responsive-base';
+
+// DEMO
+
+@import 'main/demo-ui/demo';
