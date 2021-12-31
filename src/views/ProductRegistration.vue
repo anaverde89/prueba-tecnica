@@ -4,7 +4,7 @@
       <div class="main-card mb-3 card">
         <div class="card-body">
           <h5 class="card-title">Registro de producto</h5>
-          <form class="" @submit.prevent="onSubmit">
+          <form class="" @submit.prevent="addProduct">
             <div class="form-row">
               <div class="col-md-6">
                 <div class="position-relative form-group">
@@ -157,6 +157,7 @@ import { currencyFilter } from "@/filters";
 import moment from "moment";
 import { parse } from "vue-currency-input";
 import api from "@/api";
+import datos from "@/datos";
 // import { storage } from "@/firebaseConfig";
 
 // const ref = storage.ref();
@@ -170,13 +171,14 @@ export default {
       countries: [],
       precioFormatted: "",
       imageData: null,
+      imgUrl: "",
       producto: {
         nombre: "",
         fecha: "",
         caracteristicas: "",
         email: "",
         pais: "",
-        precio: 0,
+        precio: { monto: "", options: {} },
         disponibles: 0,
         vendidos: 0,
         img: "",
@@ -192,7 +194,6 @@ export default {
         distractionFree: true,
         valueAsInteger: true,
         autoDecimalMode: true,
-        imgUrl: "",
         style: "currency",
         currency: "VES",
       };
@@ -208,11 +209,18 @@ export default {
     currency: (value) => currencyFilter(value),
   },
   methods: {
-    onSubmit() {
-      this.$router.replace({
-        name: "Home",
-        // params: { id: resp.data[0].id },
-      });
+    addProduct() {
+      this.producto.precio = {
+        monto: this.precioFormatted,
+        options: this.options,
+      };
+      this.producto.img = this.imageData.name;
+      datos.addData(this.producto);
+      console.log(this.producto);
+      // this.$router.replace({
+      //   name: "Home",
+      //   // params: { id: resp.data[0].id },
+      // });
     },
     previewImage(event) {
       // this.picture = null;

@@ -1,7 +1,7 @@
-import * as firebase from "firebase/app";
-import "firebase/storage";
+// import { initializeApp } from "firebase/app";
+// import "firebase/storage";
 
-const firebaseConfig = {
+export default {
   apiKey: "AIzaSyCshvy_Qf_yUYy7Krnul7sBclIRi50lxtk",
   authDomain: "prueba-tecnica-2b8f9.firebaseapp.com",
   projectId: "prueba-tecnica-2b8f9",
@@ -12,6 +12,3 @@ const firebaseConfig = {
 
 // Initialize Firebase
 // eslint-disable-next-line
-const app = firebase.initializeApp(firebaseConfig);
-const storage = firebase.storage();
-export { storage };

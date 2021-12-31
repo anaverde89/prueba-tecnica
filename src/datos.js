@@ -1,26 +1,13 @@
-// import firebase from "@/firebase";
-// let dbs = firebase.app.database();
-// // eslint-disable-next-line
-// let productsRef = dbs.ref("productos");
-// firebase = {
-//   productos: productsRef,
-// };
-// function guardarDatos(data) {
-//   const docData = {
-//     stringExample: "Hello world!",
-//     booleanExample: true,
-//     numberExample: 3.14159265,
-//     dateExample: Timestamp.fromDate(new Date("December 10, 1815")),
-//     arrayExample: [5, true, "hello"],
-//     nullExample: null,
-//     objectExample: {
-//       a: 5,
-//       b: {
-//         nested: "foo",
-//       },
-//     },
-//   };
-//   await setDoc(doc(db, "data", "one"), docData);
-// }
+import { initializeApp } from "firebase/app";
+import { getDatabase, ref, set, push } from "firebase/database";
+import firebaseConfig from "@/firebaseConfig";
+let app = initializeApp(firebaseConfig);
+let db = getDatabase(app);
+let productsRef = ref(db, "products");
+let newProduct = push(productsRef);
 
-// export { guardarDatos };
+function addData(data) {
+  set(newProduct, data);
+}
+
+export default { addData };
