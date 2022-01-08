@@ -15,7 +15,7 @@
                 />
               </div>
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-3">
               <div class="position-relative form-group">
                 <button
                   @click="$router.push({ name: 'Register' })"
@@ -49,6 +49,7 @@ export default {
   },
   created() {
     this.products = datos.getData();
+    // console.log(datos.getData());
   },
 };
 </script>

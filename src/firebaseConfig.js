@@ -4,6 +4,7 @@
 export default {
   apiKey: "AIzaSyCshvy_Qf_yUYy7Krnul7sBclIRi50lxtk",
   authDomain: "prueba-tecnica-2b8f9.firebaseapp.com",
+  databaseURL: "https://prueba-tecnica-2b8f9-default-rtdb.firebaseio.com",
   projectId: "prueba-tecnica-2b8f9",
   storageBucket: "prueba-tecnica-2b8f9.appspot.com",
   messagingSenderId: "819842627516",

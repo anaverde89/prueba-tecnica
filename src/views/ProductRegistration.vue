@@ -158,7 +158,12 @@
               </div>
               <div class="col-sm-1">
                 <div class="position-relative form-group">
-                  <button class="btn btn-danger">Salir</button>
+                  <button
+                    @click="$router.push({ name: 'Home' })"
+                    class="btn btn-danger"
+                  >
+                    Salir
+                  </button>
                 </div>
               </div>
             </div>
@@ -234,8 +239,12 @@ export default {
         monto: this.precioFormatted,
         options: this.options,
       };
-
+      let fechaString = moment(this.producto.fecha).format("YYYY-MM-DD");
+      this.producto.fecha = fechaString;
       this.producto.img = this.imageData != null ? this.imageData.name : "";
+      //eslint-disable-next-line
+      // debugger;
+      // console.log(moment(this.producto.fecha.getTime()).format("YYYY-MM-DD"));
       datos.addData(this.producto);
       this.producto = {
         id: "",
@@ -250,7 +259,7 @@ export default {
         img: "",
       };
       this.precioFormatted = "";
-      console.log(this.producto);
+      // console.log(this.producto);
       this.imageData = null;
       // this.$router.replace({
       //   name: "Home",

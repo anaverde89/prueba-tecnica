@@ -15,6 +15,14 @@
           :fields="fields"
           sort-icon-left
         >
+          <template #cell(precio)="data">
+            {{ data.value.monto }}
+          </template>
+          <template #cell(borrar)="row">
+            <b-button size="sm" @click="deleteItem(row.item.id)" class="mr-2">
+              Borrar
+            </b-button>
+          </template>
         </b-table>
       </b-col>
     </b-row>
@@ -47,11 +55,7 @@ export default {
       { key: "vendidos", label: "Und. vendidas", sortable: false },
       { key: "borrar", label: "", sortable: false },
     ],
-    items: [
-      { id: 40, nombre: "Dickerson", caracteristicas: "Macdonald" },
-      { id: 21, nombre: "Larsen", caracteristicas: "Shaw" },
-      { id: 89, nombre: "Geneva", caracteristicas: "Wilson" },
-    ],
+    items: [],
     striped: true,
     bordered: false,
     outlined: false,
@@ -71,6 +75,29 @@ export default {
     linkGen(pageNum) {
       return "#page/" + pageNum + "/foobar";
     },
+    deleteItem(id) {
+      console.log(id);
+    },
+  },
+  created() {
+    // this.items = [];
+    // //eslint-disable-next-line
+    // // debugger;
+    // this.products.forEach((item) => {
+    //   this.items.push({
+    //     id: item.id,
+    //     nombre: item.nombre,
+    //     caracteristicas: item.caracteristicas,
+    //     fecha: item.fecha,
+    //     email: item.email,
+    //     pais: item.pais,
+    //     precio: item.precio.monto,
+    //     disponibles: item.disponibles,
+    //     vendidos: item.vendidos,
+    //     borrar: "",
+    //   });
+    // });
+    // console.log(this.items);
   },
 };
 </script>
